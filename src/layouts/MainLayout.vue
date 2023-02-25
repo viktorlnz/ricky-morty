@@ -3,6 +3,7 @@
     <q-header elevated>
       <q-toolbar>
         <q-toolbar-title> Ricky and Morty </q-toolbar-title>
+        <SearchBar />
       </q-toolbar>
     </q-header>
 
@@ -16,4 +17,6 @@
   </q-layout>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import SearchBar from 'src/components/searchBar/SearchBar.vue';
+</script>
