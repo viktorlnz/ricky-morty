@@ -1,42 +1,27 @@
 <template>
   <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
+    <div class="text-h5">Personagens</div>
+    <q-scroll-area class="scroll-area row">
+      <character-component
+        class="q-ma-md"
+        v-for="(character, i) in characters"
+        :key="i"
+      />
+    </q-scroll-area>
   </q-page>
 </template>
 
 <script setup lang="ts">
-import { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/ExampleComponent.vue';
+import CharacterComponent from 'src/components/character/CharacterComponent.vue';
 import { ref } from 'vue';
 
-const todos = ref<Todo[]>([
-  {
-    id: 1,
-    content: 'ct1'
-  },
-  {
-    id: 2,
-    content: 'ct2'
-  },
-  {
-    id: 3,
-    content: 'ct3'
-  },
-  {
-    id: 4,
-    content: 'ct4'
-  },
-  {
-    id: 5,
-    content: 'ct5'
-  }
-]);
-const meta = ref<Meta>({
-  totalCount: 1200
-});
+const characters = ref([1, 2, 3, 4, 5, 6, 7, 89, 9, 4, 48, 8, 8, 8]);
 </script>
+
+<style lang="scss" scoped>
+.scroll-area {
+  width: 95%;
+  min-width: 300px;
+  height: calc(100vh - 200px);
+}
+</style>
